@@ -1,21 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchGreeting } from '../redux/greetings/greetings';
+import Greeting from './Greeting';
 
-function Greetings(props) {
-  const { greetings } = props;
+export default function Greetings() {
+  const dispatch = useDispatch();
+  const greetings = useSelector((state) => state.greetings);
+
+  if (greetings.length === 0) {
+    dispatch(fetchGreeting());
+  }
+
   return (
     <div>
       {greetings.map((greeting) => (
         <div key={greeting.id}>
-          <h1>{greeting.message}</h1>
+          <Greeting id={greeting.id} message={greeting.message} />
         </div>
       ))}
     </div>
   );
 }
-
-Greetings.propTypes = {
-  greetings: PropTypes.arrayOf(PropTypes.object()).isRequired,
-};
-
-export default Greetings;

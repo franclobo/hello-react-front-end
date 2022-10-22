@@ -12,13 +12,13 @@ In this exercise I created an app that shows greetings radomly using Webpack wit
 
 ## Instalation
 
-- [Clone repository](git@github.com:franclobo/hello-rails-react.git)
+- [Clone repository](git@github.com:franclobo/hello-react-front-end.git)
 
-- bundle install
+- npm i
 
-- rails db:create db:migrate db:seed
+- npm start
 
-- ./bin/dev
+- [Rails back-end repo](https://github.com/franclobo/hello-rails-back-end)
 
 ## Author
 
