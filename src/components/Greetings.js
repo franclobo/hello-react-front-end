@@ -1,17 +1,21 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Greetings(props) {
+  const { greetings } = props;
   return (
     <div>
-      {props.greetings.map((greeting) => {
-        return (
-          <div key={greeting.id}>
-            <h1>{greeting.message}</h1>
-          </div>
-        );
-      })}      
+      {greetings.map((greeting) => (
+        <div key={greeting.id}>
+          <h1>{greeting.message}</h1>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default Greetings
+Greetings.propTypes = {
+  greetings: PropTypes.arrayOf(PropTypes.object()).isRequired,
+};
+
+export default Greetings;

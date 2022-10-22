@@ -19,12 +19,12 @@ function App() {
         setGreetings(items);
       }
     });
-    return () => (mounted = false);
+    return () => { (mounted = false); };
   }, []);
 
   return (
     <div className="App">
-      <Greetings greetings={greetings} />      
+      <Greetings greetings={greetings} />
     </div>
   );
 }
